@@ -1,5 +1,10 @@
-# Image INR Encoding Proactive Partitioning
-A project that seeks to speed up INR image encoding by utilizing proactive partitioning
+# Proactive Spatial Partitioning for Implicit Neural Representations (INRs)
+A theoretic framework for accelerating continuous coordinate network fitting (SIRENs) by proactively predicting quadtree splits from raw spatial features, bypassing unrecoverable compute on complex parent blocks.
 
-# Code Sourcing
-The code is a mix of human-written code, Gemma 4 (12B) generated code, Gemini 3.1 Pro generated code, and Gemini Flash generated code (2.5, 3.5, and 3.8)
+## Key Results
++ Proof of Concept: Achieved a 37.44% wall-clock speedup on AMD dGPU hardware over standard brute-force quadtree fitting while maintaining target reconstruction fidelity.
++ Core Theoretical Premise: False Positive partitioning errors ($\alpha$) drive exponential $4^d$ node expansion, whereas False Negative errors ($\beta$) are amortized via parent-to-child weight inheritance.
+
+## Implementation & Development
++ Environment: PyTorch on ROCm
++ Development Notes: Algorithmic formulation, mathematical recurrences, and experimental design by Patrick Schrems. LLM assistance utilized during code implementations and debugging.
